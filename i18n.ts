@@ -17,6 +17,11 @@ const resources = {
       pwd_placeholder: 'Enter your password',
       Ok_text: 'Ok',
       Dashboard: 'Dashboard',
+      cred_required: 'Both Email Id/password is required to login',
+      email_invalid: 'Please enter a valid email Id',
+      password_poilcy:
+        'Password must be 8 to 15 characters long, with at least 1 uppercase letter and 1 special character',
+      password_max_length: 'The password length should be between 8-15',
     },
   },
   ar: {
@@ -31,6 +36,12 @@ const resources = {
       pwd_placeholder: 'أدخل كلمة المرور',
       Ok_text: 'موافق',
       Dashboard: 'لوحة القيادة',
+      cred_required:
+        'كل من البريد الإلكتروني وكلمة المرور مطلوبان لتسجيل الدخول.',
+      email_invalid: 'الرجاء إدخال بريد إلكتروني صالح.',
+      password_poilcy:
+        'يجب أن تكون كلمة المرور مكونة من 8 إلى 15 حرفًا، مع وجود حرف كبير وحرف خاص واحد على الأقل.',
+      password_max_length: 'يجب أن تكون طول كلمة المرور بين 8 و 15 حرفًا.',
     },
   },
 };

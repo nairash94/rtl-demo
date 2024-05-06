@@ -20,6 +20,7 @@ function AuthStack() {
         headerShown: true,
         headerStyle: {backgroundColor: theme.colors.primary},
         headerTitleStyle: {color: '#FFF'},
+        headerTitleAlign: 'left',
         headerRight: HeaderRight,
       }}>
       <AuthenticationStack.Screen
@@ -40,6 +41,7 @@ function InAppStack() {
         headerShown: true,
         headerStyle: {backgroundColor: theme.colors.primary},
         headerTitleStyle: {color: '#FFF'},
+        headerTitleAlign: 'left',
         headerRight: HeaderRight,
       }}>
       <Stack.Screen
