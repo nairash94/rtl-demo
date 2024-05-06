@@ -64,9 +64,9 @@ const LoginScreen = ({}: AuthStackScreenProps<'LoginScreen'>) => {
   });
   const onDismissSnackBar = () => setSnackbar({visible: false});
 
-  const onSubmit: SubmitHandler<LoginFormValues> = () => {
+  const onSubmit: SubmitHandler<LoginFormValues> = data => {
     Keyboard.dismiss();
-    dispatch(setAuthenticated());
+    dispatch(setAuthenticated(data.email));
   };
   const onError: SubmitErrorHandler<LoginFormValues> = errors => {
     Keyboard.dismiss();
@@ -100,6 +100,7 @@ const LoginScreen = ({}: AuthStackScreenProps<'LoginScreen'>) => {
       <ButtonContainer>
         <Button
           mode="contained"
+          disabled={!(methods.formState.isValid && methods.formState.isDirty)}
           onPress={methods.handleSubmit(onSubmit, onError)}>
           Login
         </Button>

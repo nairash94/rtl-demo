@@ -21,7 +21,6 @@ const Dashboard = () => {
       keyExtractor={(item: PopularMovies) => item.id.toString()}
       showsVerticalScrollIndicator={false}
       initialNumToRender={10}
-      onEndReachedThreshold={0.6}
       renderItem={({item}) => (
         <View style={styles.item}>
           <Card.Cover

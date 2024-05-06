@@ -52,13 +52,15 @@ function InAppStack() {
 }
 
 const MainStack = () => {
-  const isAuthenticated = useAppSelector(
-    state => state.userData?.isAuthenticated,
-  );
+  const userData = useAppSelector(state => state?.userData);
 
   return (
     <NavigationContainer>
-      {!isAuthenticated ? <AuthStack /> : <InAppStack />}
+      {userData?.isAuthenticated && userData?.email ? (
+        <InAppStack />
+      ) : (
+        <AuthStack />
+      )}
     </NavigationContainer>
   );
 };
