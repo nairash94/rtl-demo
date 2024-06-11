@@ -1,5 +1,3 @@
-import {useAppDispatch, useAppSelector} from '@reduxToolkit/index';
-import {setUserLang} from '@reduxToolkit/slice/userData';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import styled from 'styled-components/native';
@@ -29,18 +27,15 @@ const LANGUAGES = [
   {label: 'Arabic', value: 'ar'},
 ];
 const HeaderRight = () => {
-  const dispatch = useAppDispatch();
   const {t} = useTranslation();
-  const language = useAppSelector(state => state.userData?.language) ?? 'en';
   return (
     <LangToggleContainer>
       {LANGUAGES.map(item => {
-        const selected = language === item.value;
+        const selected = i18n.language === item.value;
         return (
           <LangBlock
             key={item.label}
             onPress={() => {
-              dispatch(setUserLang(item.value));
               i18n
                 .changeLanguage(item.value)
                 .then(() => {
