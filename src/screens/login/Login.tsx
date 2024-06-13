@@ -78,15 +78,19 @@ const LoginScreen = ({}: AuthStackScreenProps<'LoginScreen'>) => {
   return (
     <ParentView>
       <CredentialsView>
-        <Text variant="titleMedium">{t('login_title')}</Text>
+        <Text testID="login_title" variant="titleMedium">
+          {t('login_title')}
+        </Text>
         <FormProvider {...methods}>
           <FormInput
+            testID="email_field"
             name="email"
             label={t('email_label')}
             maxLength={50}
             placeholder={t('email_placeholder')}
           />
           <FormInput
+            testID="password_field"
             name="password"
             label={t('pwd_label')}
             maxLength={20}
@@ -97,6 +101,7 @@ const LoginScreen = ({}: AuthStackScreenProps<'LoginScreen'>) => {
       </CredentialsView>
       <ButtonContainer>
         <Button
+          testID="login_button"
           mode="contained"
           disabled={!methods.formState.isDirty}
           onPress={methods.handleSubmit(onSubmit, onError)}>

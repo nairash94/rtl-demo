@@ -95,9 +95,6 @@ class Http {
 
   // Handle global app errors
   private handleError(error: AxiosError<ErrorMap>) {
-    if (error.code === 'ERR_NETWORK') {
-      error.message = 'No Internet Connectivity';
-    }
     return Promise.reject(error);
   }
 }
